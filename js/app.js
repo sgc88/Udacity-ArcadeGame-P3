@@ -1,5 +1,11 @@
 // Enemies our player must avoid
-var Enemy = function() {
+var Enemy = function(x, y, speed) {
+    //will use this to define the x position of badGuy
+    var x = x;
+    //will use this to define the y position of badGuy
+    var y = y;
+    // speed of the badGuy
+    var speed = speed;
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -12,6 +18,9 @@ var Enemy = function() {
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
+    //since the badGuy will only go one direction (from left to ride)
+    //we only need x coordination to multiply the movement toward to right
+    this.x += x.speed *dt;
     // which will ensure the game runs at the same speed for
     // all computers.
 };
@@ -22,6 +31,12 @@ Enemy.prototype.render = function() {
 };
 
 // Now write your own player class
+var player = function(x, y){
+  this.x = x;
+  this.y = y;
+
+  this.sprite = 'images/char-princess-girl.png';
+}
 // This class requires an update(), render() and
 // a handleInput() method.
 

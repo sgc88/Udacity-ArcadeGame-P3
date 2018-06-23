@@ -1,3 +1,7 @@
 body {
     text-align: center;
 }
+canvas{
+  border:solid 3px green;
+  border-radius: 5px;
+}
