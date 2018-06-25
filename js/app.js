@@ -20,12 +20,13 @@ Enemy.prototype.update = function(dt) {
   this.x += this.speed * dt
 
 if(this.x > 515){
-  this.x = -10;
+  this.x = Math.floor(Math.random() * -10);
+  this.speed = Math.floor(Math.random() * (180, 225));
 }
-if(this.x === player.x){
-  this.x = -10;
-
-}
+// if(this.x === player.x){
+//   this.x = -10;
+//
+// }
 };
 
 // Draw the enemy on the screen, required method for game
