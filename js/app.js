@@ -62,9 +62,10 @@ Player.prototype.handleInput = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-var enemy = new Enemy(200, 145, 120);
-var enemy1 = new Enemy(200, 220, 175);
-var enemy2 = new Enemy(200, 75, 225);
+var enemy = new Enemy(50, 145, 120);
+var enemy1 = new Enemy(-50, 220, 175);
+var enemy2 = new Enemy(35, 75, 225);
+var enemy3 = new Enemy(75, 75, 245);
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 var allEnemies=[];
@@ -72,6 +73,7 @@ var allEnemies=[];
 allEnemies.push(enemy);
 allEnemies.push(enemy1);
 allEnemies.push(enemy2);
+allEnemies.push(enemy3);
 
 var counter = 0;
 for(let i =0; i<allEnemies.length; i++){
