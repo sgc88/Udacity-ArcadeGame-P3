@@ -21,7 +21,10 @@ Enemy.prototype.update = function(dt) {
 
 if(this.x > 515){
   this.x = -10;
-  
+}
+if(this.x === player.x){
+  this.x = -10;
+
 }
 };
 
@@ -59,11 +62,16 @@ Player.prototype.handleInput = function() {
 // a handleInput() method.
 
 var enemy = new Enemy(200, 145, 120);
+var enemy1 = new Enemy(200, 220, 175);
+var enemy2 = new Enemy(200, 75, 225);
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 var allEnemies=[];
 
 allEnemies.push(enemy);
+allEnemies.push(enemy1);
+allEnemies.push(enemy2);
+
 var counter = 0;
 for(let i =0; i<allEnemies.length; i++){
   if(counter == 3){
