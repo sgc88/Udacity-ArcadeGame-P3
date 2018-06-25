@@ -19,7 +19,10 @@ var Enemy = function(x, y, speed) {
 Enemy.prototype.update = function(dt) {
   this.x += this.speed * dt
 
-
+if(this.x > 515){
+  this.x = -10;
+  
+}
 };
 
 // Draw the enemy on the screen, required method for game
@@ -55,12 +58,19 @@ Player.prototype.handleInput = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-var enemy = new Enemy(200, 145, 50);
+var enemy = new Enemy(200, 145, 120);
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 var allEnemies=[];
 
 allEnemies.push(enemy);
+var counter = 0;
+for(let i =0; i<allEnemies.length; i++){
+  if(counter == 3){
+    allEnemies.push(enemy);
+    counter += 3;
+  }
+}
 
 // Place the player object in a variable called player
 var player = new Player();
