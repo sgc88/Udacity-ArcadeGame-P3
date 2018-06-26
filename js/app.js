@@ -21,14 +21,16 @@ Enemy.prototype.update = function(dt) {
 
 if(this.x > 515){
   this.x = Math.floor(Math.random() * -10);
-  this.speed = Math.floor(Math.random() * (180, 225));
+  this.speed = getRandomInt(100, 250);
 }
 // if(this.x === player.x){
 //   this.x = -10;
 //
 // }
 };
-
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
