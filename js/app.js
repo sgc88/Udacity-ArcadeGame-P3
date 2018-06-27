@@ -66,6 +66,9 @@ Player.prototype.handleInput = function(keyPress) {
       if(keyPress == 'right' && this.x > 0){
         this.x += 100;
       }
+      if(keyPress == 'right' && this.x >410){
+        this.x = 410;
+      }
 
 
 }
