@@ -58,10 +58,13 @@ Player.prototype.update = function(dt) {
 Player.prototype.handleInput = function(keyPress) {
 
       if (keyPress == 'left' && this.x > 0) {
-          this.x -= 102;
+          this.x -= 100;
       };
       if(keyPress == 'left' && this.x < 15){
         this.x = 15;
+      }
+      if(keyPress == 'right' && this.x > 0){
+        this.x += 100;
       }
 
 
