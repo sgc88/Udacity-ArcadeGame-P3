@@ -21,12 +21,9 @@ Enemy.prototype.update = function(dt) {
 
 if(this.x > 515){
   this.x = Math.floor(Math.random() * -10);
-  this.speed = getRandomInt(100, 250);
+  this.speed = getRandomInt(80, 250);
 }
-// if(this.x === player.x){
-//   this.x = -10;
-//
-// }
+
 };
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -58,7 +55,15 @@ Player.prototype.update = function(dt) {
 
 
 
-Player.prototype.handleInput = function() {
+Player.prototype.handleInput = function(keyPress) {
+
+      if (keyPress == 'left' && this.x > 0) {
+          this.x -= 102;
+      };
+      if(keyPress == 'left' && this.x < 15){
+        this.x = 15;
+      }
+
 
 }
 // This class requires an update(), render() and
@@ -68,6 +73,7 @@ var enemy = new Enemy(50, 145, 120);
 var enemy1 = new Enemy(-50, 220, 175);
 var enemy2 = new Enemy(35, 75, 225);
 var enemy3 = new Enemy(75, 75, 245);
+var enemy4 = new Enemy(-50, 220, 175);
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 var allEnemies=[];
@@ -76,6 +82,7 @@ allEnemies.push(enemy);
 allEnemies.push(enemy1);
 allEnemies.push(enemy2);
 allEnemies.push(enemy3);
+allEnemies.push(enemy4);
 
 var counter = 0;
 for(let i =0; i<allEnemies.length; i++){
