@@ -72,6 +72,9 @@ Player.prototype.handleInput = function(keyPress) {
       if(keyPress == 'up' && this.y > 0){
         this.y -= 90;
       }
+      if(keyPress == 'down' && this.y > 90){
+        this.y += 90;
+      }
 
 
 
