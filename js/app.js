@@ -69,12 +69,27 @@ Player.prototype.handleInput = function(keyPress) {
       if(keyPress == 'right' && this.x >410){
         this.x = 410;
       }
+      // if (keyPress == 'up' && this.y > 0) {
+      //     this.y -= 80;
+      // };
+      // if(keyPress == 'up' && this.y < 80){
+      //   this.x = 80;
+      // }
       if(keyPress == 'up' && this.y > 0){
-        this.y -= 90;
+        this.y -= 80;
       }
-      if(keyPress == 'down' && this.y > 90){
-        this.y += 90;
+      if(keyPress == 'down' && this.y < 405){
+        this.y += 80;
       }
+      if(keyPress == 'down' && this.y >400){
+        this.y = 400;
+      }
+      // if(keyPress == 'up' && this.y > 0){
+      //   this.y -= 80;
+      // }
+      // if(keyPress == 'down' && this.y < 80){
+      //   this.y += 80;
+      // }
 
 
 
