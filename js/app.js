@@ -56,43 +56,35 @@ Player.prototype.update = function(dt) {
 
 
 Player.prototype.handleInput = function(keyPress) {
-
+      // moves to left
       if (keyPress == 'left' && this.x > 0) {
           this.x -= 100;
       };
+      // the good guy should stay in canvas when it moves all the way to left
       if(keyPress == 'left' && this.x < 15){
         this.x = 15;
       }
+      // the good guy moves to right with right arrow by 100 per/ press
       if(keyPress == 'right' && this.x > 0){
         this.x += 100;
       }
+      //the good guy stops moving to the right when it reaches to the  edge.
       if(keyPress == 'right' && this.x >410){
         this.x = 410;
       }
-      // if (keyPress == 'up' && this.y > 0) {
-      //     this.y -= 80;
-      // };
-      // if(keyPress == 'up' && this.y < 80){
-      //   this.x = 80;
-      // }
+      //moves up with up arrow 80 per/ press
       if(keyPress == 'up' && this.y > 0){
         this.y -= 80;
       }
+      // moves down with down arrow 80 per/ press
+      // stops moving down when it reaches 405
       if(keyPress == 'down' && this.y < 405){
         this.y += 80;
       }
+      //it stops moving down when it reaches 400 and stays on the canvas
       if(keyPress == 'down' && this.y >400){
         this.y = 400;
       }
-      // if(keyPress == 'up' && this.y > 0){
-      //   this.y -= 80;
-      // }
-      // if(keyPress == 'down' && this.y < 80){
-      //   this.y += 80;
-      // }
-
-
-
 }
 // This class requires an update(), render() and
 // a handleInput() method.
