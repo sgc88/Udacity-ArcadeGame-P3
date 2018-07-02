@@ -24,6 +24,14 @@ if(this.x > 515){
   this.speed = getRandomInt(80, 250);
 }
 
+if (player.x < this.x + 40 &&
+    player.x + 40 > this.x &&
+    player.y < this.y + 30 &&
+    30 + player.y > this.y) {
+    player.x = 202;
+    player.y = 405;
+};
+
 };
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -54,7 +62,7 @@ Player.prototype.update = function(dt) {
 
 }
 
-
+var counter = 0;
 
 Player.prototype.handleInput = function(keyPress) {
       // moves to left
@@ -91,9 +99,12 @@ Player.prototype.handleInput = function(keyPress) {
         setTimeout(()=> {
           this.x = 210;
           this.y = 400;
-
         }, 600);
+        counter ++ ;
+        document.getElementById('score').innerHTML = 'Score: '+ counter;
       };
+
+
 
 
 }
