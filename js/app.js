@@ -18,7 +18,7 @@ var Enemy = function(x, y, speed) {
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
   this.x += this.speed * dt
-
+// having bad guys move between range of speed
 if(this.x > 515){
   this.x = Math.floor(Math.random() * -10);
   this.speed = getRandomInt(80, 250);
@@ -46,6 +46,7 @@ var Player = function(){
 
 Player.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+
 
 }
 
@@ -85,15 +86,25 @@ Player.prototype.handleInput = function(keyPress) {
       if(keyPress == 'down' && this.y >400){
         this.y = 400;
       }
+      //once the good guy reaches the water, it will reset the game and the good guy will go its start position
+      if(this.y < 80) {
+        setTimeout(()=> {
+          this.x = 210;
+          this.y = 400;
+
+        }, 600);
+      };
+
+
 }
 // This class requires an update(), render() and
 // a handleInput() method.
 
-var enemy = new Enemy(50, 145, 120);
-var enemy1 = new Enemy(-50, 220, 175);
-var enemy2 = new Enemy(35, 75, 225);
-var enemy3 = new Enemy(75, 75, 245);
-var enemy4 = new Enemy(-50, 220, 175);
+var enemy = new Enemy(-80, 145, 120);
+var enemy1 = new Enemy(-100, 220, 175);
+var enemy2 = new Enemy(-90, 75, 225);
+var enemy3 = new Enemy(-85, 75, 245);
+var enemy4 = new Enemy(-95, 220, 175);
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 var allEnemies=[];
@@ -104,13 +115,13 @@ allEnemies.push(enemy2);
 allEnemies.push(enemy3);
 allEnemies.push(enemy4);
 
-var counter = 0;
-for(let i =0; i<allEnemies.length; i++){
-  if(counter == 3){
-    allEnemies.push(enemy);
-    counter += 3;
-  }
-}
+// var counter = 0;
+// for(let i =0; i<allEnemies.length; i++){
+//   if(counter == 3){
+//     allEnemies.push(enemy);
+//     counter += 3;
+//   }
+// }
 
 // Place the player object in a variable called player
 var player = new Player();
