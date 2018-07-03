@@ -1,4 +1,5 @@
 // Enemies our player must avoid
+'use strict';
 var Enemy = function(x, y, speed) {
     //will use this to define the x position of badGuy
     this.x = x;

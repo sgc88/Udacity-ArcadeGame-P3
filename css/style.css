@@ -5,3 +5,35 @@ body {
   border:solid 3px green;
   border-radius: 5px;
 } */
+
+.players{
+width: 20%;
+/* margin-top:6%; */
+margin-left: 18%;
+margin-right:-5%;
+}
+li{
+ list-style-type: none;
+ display:flex;
+ flex-direction: column;
+ width:100px;
+ height:120px;
+ /* margin-bottom:2%;
+ margin-top:2%; */
+
+}
+li:hover{
+  width:100px;
+  height:100px;
+  background-color: #00ff7f;
+  border:2px green;
+  border-radius: 15px;
+
+}
+canvas{
+  margin-top:-52%;
+  margin-left: -5%;
+}
+img{
+  height:120px;
+}
