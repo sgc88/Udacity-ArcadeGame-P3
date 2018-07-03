@@ -39,8 +39,42 @@ function getRandomInt(min, max) {
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    //ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
+
+var Treasure = function(x, y, sprite){
+  this.x = x;
+  this.y = y;
+  this.sprite = sprite;
+
+};
+Treasure.prototype.render = function() {
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  // ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+
+
+
+
+
+};
+
+var treasure = new Treasure(200, 70, 'images/Star.png');
+var treasure1 = new Treasure(0, 250, 'images/Heart.png');
+var treasure2 = new Treasure(400, 150, 'images/Gem-Green.png');
+var treasure3 = new Treasure(100, 150, 'images/Gem-Blue.png');
+
+
+
+
+
+
+
+var totalTreasures = [];
+
+totalTreasures.push(treasure);
+totalTreasures.push(treasure1);
+totalTreasures.push(treasure2);
+totalTreasures.push(treasure3);
+
 
 // Now write your own player class
 var Player = function(){
@@ -51,7 +85,7 @@ var Player = function(){
 
 }
 
-
+//rendering our player
 Player.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 
@@ -63,7 +97,7 @@ Player.prototype.update = function(dt) {
 }
 
 var counter = 0;
-
+// our player moves up, down, right and left
 Player.prototype.handleInput = function(keyPress) {
       // moves to left
       if (keyPress == 'left' && this.x > 0) {

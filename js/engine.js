@@ -154,6 +154,12 @@ var Engine = (function(global) {
         });
 
         player.render();
+        treasure.render();
+        treasure1.render();
+        treasure2.render();
+        treasure3.render();
+        
+
     }
 
     /* This function does nothing but it could have been a good place to
@@ -173,7 +179,12 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-princess-girl.png'
+        'images/char-princess-girl.png',
+        'images/Star.png',
+        'images/Heart.png',
+        'images/Gem-Blue.png',
+        'images/Gem-Green.png',
+        'images/Gem-Orange.png'
     ]);
     Resources.onReady(init);
 
