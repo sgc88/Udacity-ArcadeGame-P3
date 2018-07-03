@@ -160,13 +160,7 @@ allEnemies.push(enemy2);
 allEnemies.push(enemy3);
 allEnemies.push(enemy4);
 
-// var counter = 0;
-// for(let i =0; i<allEnemies.length; i++){
-//   if(counter == 3){
-//     allEnemies.push(enemy);
-//     counter += 3;
-//   }
-// }
+
 
 // Place the player object in a variable called player
 var player = new Player();
