@@ -158,6 +158,7 @@ var Engine = (function(global) {
         treasure1.render();
         treasure2.render();
         treasure3.render();
+        treasure4.render();
         
 
     }
@@ -184,7 +185,12 @@ var Engine = (function(global) {
         'images/Heart.png',
         'images/Gem-Blue.png',
         'images/Gem-Green.png',
-        'images/Gem-Orange.png'
+        'images/Gem-Orange.png',
+        'images/char-boy.png',
+        'images/char-cat-girl.png',
+        'images/char-horn-girl.png',
+        'images/char-pink-girl.png'
+
     ]);
     Resources.onReady(init);
 

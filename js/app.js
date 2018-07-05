@@ -1,4 +1,5 @@
 // Enemies our player must avoid
+
 'use strict';
 var Enemy = function(x, y, speed) {
     //will use this to define the x position of badGuy
@@ -62,6 +63,8 @@ var treasure = new Treasure(200, 70, 'images/Star.png');
 var treasure1 = new Treasure(0, 250, 'images/Heart.png');
 var treasure2 = new Treasure(400, 150, 'images/Gem-Green.png');
 var treasure3 = new Treasure(100, 150, 'images/Gem-Blue.png');
+var treasure4 = new Treasure(300, 70, 'images/Gem-Orange.png');
+
 
 
 
@@ -180,3 +183,29 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+
+
+const pickPlayer = document.querySelector(".players");
+
+pickPlayer.addEventListener('click', function(event){
+ alert("clicked!");
+ var x = event.target.parentElement;
+
+ player.sprite = x.firstElementChild.getAttribute('src');
+
+ console.log(player.sprite);
+ 
+});
+
+
+
+
+
+
+
+
+
+
+
+
