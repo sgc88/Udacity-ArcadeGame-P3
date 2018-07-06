@@ -119,7 +119,7 @@ Player.prototype.checkTreasure = function() {
     if(counter >= 100){
         this.x = 210;
         this.y = 400;
-        alert("Great Job!");
+        alert("Great Job!You win!");
         counter = 0;
         reset();
     }
