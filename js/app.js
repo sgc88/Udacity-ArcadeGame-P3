@@ -54,21 +54,8 @@ var Treasure = function(x, y, sprite){
 Treasure.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 
-  // if (player.x < this.x + 40 &&
-  //   player.x + 40 > this.x &&
-  //   player.y < this.y + 30 &&
-  //   30 + player.y > this.y) {
-  //   console.log("test gem before ", counter);
-  //   counter += 20; 
-  //   console.log("test gem after ", counter);
-    
-
-  // }
-
-
 };
-Treasure.prototype.update = function(dt){
-// console.log("update function");
+Treasure.prototype.update = function(){
 
 };
 
@@ -77,11 +64,6 @@ var treasure1 = new Treasure(0, 250, 'images/Heart.png');
 var treasure2 = new Treasure(400, 150, 'images/Gem-Green.png');
 var treasure3 = new Treasure(100, 150, 'images/Gem-Blue.png');
 var treasure4 = new Treasure(300, 70, 'images/Gem-Orange.png');
-
-
-
-
-
 
 
 
@@ -128,18 +110,18 @@ Player.prototype.checkTreasure = function() {
       counter += 20;
       this.y = -10;
 
-      console.log("increment counter. ", counter);
+      // take the gem away if player gets the point
       totalTreasures.splice(i, 1);
-      console.log("removed treasure. ", totalTreasures[i]);
 
 
     }
-    if(counter >= 84){
+    //when the player wins
+    if(counter >= 100){
         this.x = 210;
         this.y = 400;
-        counter = 0;
-        
         alert("Great Job!");
+        counter = 0;
+        reset();
     }
   }
 }
@@ -192,20 +174,18 @@ Player.prototype.handleInput = function(keyPress) {
   
       }
 
- 
-
-
-
-
 }
+
 // This class requires an update(), render() and
 // a handleInput() method.
+
 
 var enemy = new Enemy(-80, 145, 120);
 var enemy1 = new Enemy(-100, 220, 175);
 var enemy2 = new Enemy(-90, 75, 225);
 var enemy3 = new Enemy(-85, 75, 245);
 var enemy4 = new Enemy(-95, 220, 175);
+
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 var allEnemies=[];
@@ -237,7 +217,7 @@ document.addEventListener('keyup', function(e) {
 });
 
 
-
+//pick the player form players list with clicking on it
 const pickPlayer = document.querySelector(".players");
 
 pickPlayer.addEventListener('click', function(event){
@@ -248,6 +228,22 @@ pickPlayer.addEventListener('click', function(event){
  console.log(player.sprite);
  
 });
+//Reset the game when there is a winner or whenever we want to
+
+
+
+function reset(){
+    //player gets back its first position 
+    player.render();
+    //diplay gems on canvas
+    totalTreasures.push(treasure);
+    totalTreasures.push(treasure1);
+    totalTreasures.push(treasure2);
+    totalTreasures.push(treasure3);
+    totalTreasures.push(treasure4);
+    //score sets to 0
+    document.getElementById('score').innerHTML = 'Score: 0';
+}
 
 
 
