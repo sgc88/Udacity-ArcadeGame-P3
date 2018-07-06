@@ -94,6 +94,10 @@ var Engine = (function(global) {
             enemy.update(dt);
         });
         player.update();
+
+        totalTreasures.forEach(function(treasure) {
+            treasure.update(dt);
+        })
     }
 
     /* This function initially draws the "game level", it will then call
@@ -154,11 +158,11 @@ var Engine = (function(global) {
         });
 
         player.render();
-        treasure.render();
-        treasure1.render();
-        treasure2.render();
-        treasure3.render();
-        treasure4.render();
+
+        totalTreasures.forEach(function(treasure) {
+            treasure.render();
+        });
+  
         
 
     }

@@ -49,13 +49,26 @@ var Treasure = function(x, y, sprite){
   this.sprite = sprite;
 
 };
+
+
 Treasure.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-  // ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+
+  // if (player.x < this.x + 40 &&
+  //   player.x + 40 > this.x &&
+  //   player.y < this.y + 30 &&
+  //   30 + player.y > this.y) {
+  //   console.log("test gem before ", counter);
+  //   counter += 20; 
+  //   console.log("test gem after ", counter);
+    
+
+  // }
 
 
-
-
+};
+Treasure.prototype.update = function(dt){
+// console.log("update function");
 
 };
 
@@ -78,6 +91,7 @@ totalTreasures.push(treasure);
 totalTreasures.push(treasure1);
 totalTreasures.push(treasure2);
 totalTreasures.push(treasure3);
+totalTreasures.push(treasure4);
 
 
 // Now write your own player class
@@ -100,9 +114,41 @@ Player.prototype.update = function(dt) {
 
 }
 
+
+Player.prototype.checkTreasure = function() {
+  console.log("checkTreasure triggered.");
+  for(var i = 0; i < totalTreasures.length; i++) {
+    if(
+      // totalTreasures[i].x === this.x && totalTreasures[i].y === this.y
+      this.x < totalTreasures[i].x + 50 && 
+      this.x + 50 > totalTreasures[i].x &&
+      this.y < totalTreasures[i].y + 40 &&
+      40 + this.y > totalTreasures[i].y
+    ) {
+      counter += 20;
+      this.y = -10;
+
+      console.log("increment counter. ", counter);
+      totalTreasures.splice(i, 1);
+      console.log("removed treasure. ", totalTreasures[i]);
+
+
+    }
+    if(counter >= 84){
+        this.x = 210;
+        this.y = 400;
+        counter = 0;
+        
+        alert("Great Job!");
+    }
+  }
+}
+var winner= true;
 var counter = 0;
 // our player moves up, down, right and left
 Player.prototype.handleInput = function(keyPress) {
+       //check to see if the player gets the gem for an extra points
+      this.checkTreasure();
       // moves to left
       if (keyPress == 'left' && this.x > 0) {
           this.x -= 100;
@@ -110,37 +156,43 @@ Player.prototype.handleInput = function(keyPress) {
       // the good guy should stay in canvas when it moves all the way to left
       if(keyPress == 'left' && this.x < 15){
         this.x = 15;
-      }
+      };
       // the good guy moves to right with right arrow by 100 per/ press
       if(keyPress == 'right' && this.x > 0){
         this.x += 100;
-      }
+      };
       //the good guy stops moving to the right when it reaches to the  edge.
       if(keyPress == 'right' && this.x >410){
         this.x = 410;
-      }
+      };
       //moves up with up arrow 80 per/ press
       if(keyPress == 'up' && this.y > 0){
         this.y -= 80;
-      }
+      };
       // moves down with down arrow 80 per/ press
       // stops moving down when it reaches 405
       if(keyPress == 'down' && this.y < 405){
         this.y += 80;
-      }
+      };
       //it stops moving down when it reaches 400 and stays on the canvas
       if(keyPress == 'down' && this.y >400){
         this.y = 400;
-      }
-      //once the good guy reaches the water, it will reset the game and the good guy will go its start position
-      if(this.y < 80) {
-        setTimeout(()=> {
-          this.x = 210;
-          this.y = 400;
-        }, 600);
-        counter ++ ;
-        document.getElementById('score').innerHTML = 'Score: '+ counter;
       };
+      //once the good guy reaches the water when we have a winner!
+      //it will reset the game and the good guy will go its start position
+
+         if(this.y < 80) {
+      setTimeout(()=> {
+        this.x = 210;
+        this.y = 400;
+        winner = true;
+      }, 500);
+      counter ++ ;
+      document.getElementById('score').innerHTML = 'Score: '+ counter;
+  
+      }
+
+ 
 
 
 
@@ -189,7 +241,6 @@ document.addEventListener('keyup', function(e) {
 const pickPlayer = document.querySelector(".players");
 
 pickPlayer.addEventListener('click', function(event){
- alert("clicked!");
  var x = event.target.parentElement;
 
  player.sprite = x.firstElementChild.getAttribute('src');
