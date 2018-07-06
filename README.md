@@ -4,7 +4,7 @@ Udacity- Arcade Game
 ===================
 
 
-**Arcade Game** is a canvas game which includes running bugs from side to side while a player is trying to go all the way up from the bottom without getting eaten by this bugs. If the player get reach the gems will get an extra points and that will skip all the bugs with jumping all the way up.After getting certain points the player wins the game. After winning the game or whenever the user wants, they will be able to restart the game iether using the reeset button or with winnig the game.
+**Arcade Game** is a canvas game which includes running bugs from side to side while a player is trying to go all the way up from the bottom without getting eaten by this bugs. If the player get reach the gems will get an extra points and that will skip all the bugs with jumping all the way up.After getting certain points the player wins the game. After winning the game or whenever the user wants, they will be able to restart the game iether using the reset button or with winning the game.
 
 ----------
 
