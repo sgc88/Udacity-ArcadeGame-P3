@@ -2,11 +2,15 @@
 
 Udacity- Arcade Game
 ===================
-
+** To download the game  get the zipfile or clone the repository on your local machine and run index.html file on your browser. 
+** Or just simply play the game! To play the game go to https://www.bitballoon.com/sites/udacity-arcadegame You can even play on the way work on your phone!
+* Use the arrow keys to move the player on the canvas. The goal is to reach to the water without getting eaten by the bugs. Get exytra points and jump to the water by reaching the gems!
+* Have fun!
 
 **Arcade Game** is a canvas game which includes running bugs from side to side while a player is trying to go all the way up from the bottom without getting eaten by this bugs. If the player get reach the gems will get an extra points and that will skip all the bugs with jumping all the way up.After getting certain points the player wins the game. After winning the game or whenever the user wants, they will be able to restart the game iether using the reset button or with winning the game.
 
 ----------
+
 
 
 
