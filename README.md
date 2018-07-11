@@ -3,7 +3,7 @@
 Udacity- Arcade Game
 ===================
 ** To download the game  get the zipfile or clone the repository on your local machine and run index.html file on your browser. 
-** Or just simply play the game! To play the game go to https://www.bitballoon.com/sites/udacity-arcadegame You can even play on the way work on your phone!
+** Or just simply play the game! To play the game go to http://udacity-arcadegame.bitballoon.com/ You can even play on the way work on your phone!
 * Use the arrow keys to move the player on the canvas. The goal is to reach to the water without getting eaten by the bugs. Get exytra points and jump to the water by reaching the gems!
 * Have fun!
 
